@@ -1,0 +1,103 @@
+body {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-box {
+  display: inline-block;
+  padding: 15px;
+  background-color: rgb(223, 44, 80);
+  border-radius: 25px;
+  border: 3px solid rgb(166, 27, 55);
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.top-box {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: rgb(232, 3, 60);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.top-box.animate {
+  transition: animation 2s linear;
+  animation: drop 2s linear;
+}
+@keyframes drop {
+  0% {
+    top: -40px;
+    left: 20px;
+  }
+  30% {
+    top: 50px;
+    left: 10px;
+  }
+  50% {
+    transform: rotate(-30deg);
+    top: 100px;
+    left: 20px;
+  }
+
+  100% {
+    top: 700px;
+  }
+}
+.top-box.hide {
+  display: none;
+}
+.gift {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+}
+.line {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+}
+.h-line {
+  width: 100%;
+  padding: 2px;
+}
+.v-line {
+  width: 45%;
+  padding: 2px;
+  border-radius: 25px;
+  left: 30px;
+  transform: rotate(90deg);
+
+  z-index: 1;
+}
+.img {
+  width: 30px;
+  position: absolute;
+  top: 25%;
+  left: 38%;
+
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: swip 2s linear infinite;
+  transition: animation 0.3s linear;
+}
+
+@keyframes swip {
+  0% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(50deg);
+  }
+}
